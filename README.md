@@ -31,4 +31,4 @@ Launch *PPO_agent.py* from the command window.
 #### To watch a trained agent
 
 To watch a train agent, we can provide as first system argument the filepath to the saved weights while lunching the main script.
-Launch *PPO_agent.py* [fullpath to trained weights] from the command window.
+Launch *PPO_agent.py [fullpath to trained weights]* from the command window.
