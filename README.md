@@ -14,7 +14,7 @@ State size : 33
 Action size : 4
 Each action range : [-1,1]
 
-For 
+ 
 ### Getting started
 
 
