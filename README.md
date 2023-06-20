@@ -10,17 +10,23 @@ The essence of this problem is to solve the movement of a double jointed arm, so
 The environment is considered solved when the average score accross all 20 agents reaches 30 for 100 episodes in a row.
 
 Other specifications for each agent:
-State size : 33
+State size : 33 
 Action size : 4
 Each action range : [-1,1]
-
+Each state comprises informations about position, rotation, velocity and angular velocities.
+Each action is a Torque value.
  
 ### Getting started
 
 To run this code, Python 3.6 is required, along with the dependencies found in [requirements.txt](https://github.com/Matlal033/Project_DDQN_Banana_Navigation/edit/main/requirements.txt).
 Creating a virtual environment with those specifications is recommended.
 
-download
+You will also need to download the unity environnment compressed file from one of the following links, and extract it under the `Project_PPO_Reacher_Continuous_Control/` folder :
+
+- Linux : [click here][(https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip)](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux.zip)
+- Mac OSX : [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher.app.zip)
+- Windows (32-bit) : [click here][(https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86.zip)](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86.zip)
+- Windows (64-bit) : [click here][(https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86_64.zip)](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86_64.zip)
 
 ### Instructions
 
@@ -30,5 +36,6 @@ Launch *PPO_agent.py* from the command window.
 
 #### To watch a trained agent
 
-To watch a train agent, we can provide as first system argument the filepath to the saved weights while lunching the main script.
-Launch *PPO_agent.py [filepath to trained weights]* from the command window.
+First, in the *PPO_agent.py* file, make sure that the path to the UnityEnvironment is correctly mapped to *Reacher.exe*
+To watch a train agent, we launch the same main script *PPO_agent.py" and we add a system argument to the filepath to the saved weights.
+E.g.: Launch *PPO_agent.py [filepath to trained weights]* from the command window.
