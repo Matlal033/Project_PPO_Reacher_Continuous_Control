@@ -6,7 +6,7 @@ The PPO algorithm was used to solve this project.
 It is an on-policy algorithm, from the family of policy gradient methods, that is able to tackle complex environments, continuous action spaces and distributed training.
 
 One of the key element characterizing the PPO algorithm is the surrogate clipped objective. \
-To train the neural net, we compare the probabilities of taking a given action according to a previous policy versus the probabilities of taking that same action with the latest policy, but we clip the ratio within a range close to one (e.g. [0.8 to 1,2]), and we multiply by the advantages of doing that action in that state space. Clipping the ratio decrease the steps while changing the policy, and makes it more stable.
+To train the neural net, we compare the probabilities of taking a given action according to a previous policy versus the probabilities of taking that same action with the latest policy by dividing them together. Then we clip the ratio of probabilities within a range close to one (e.g. [0.8 to 1,2]), and we multiply by the advantages of doing that action in that state space. Clipping the ratio decreases the steps while updating the policy, and makes it more stable. We compare that clipped objective (clipped ratio * advantage) to the unclipped objective (ratio * advantages), and the smallest value of the two is the one used in order to stay more conservative with the policy updates.
 
 ##### Hypermarameters :
     episode = 2000
