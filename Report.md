@@ -7,7 +7,7 @@ It is an on-policy algorithm, from the family of policy gradient methods, that i
 
 One of the key element characterizing the PPO algorithm is the surrogate clipped objective. \
 To train the neural net, we compare the probabilities of taking a given action according to a previous policy, versus the probabilities of taking that same action with the actual policy by dividing them together. \
-Then, we clip the ratio of probabilities within a range close to one (e.g. [0.8 to 1,2]), and we multiply it by the advantages of doing that action in that state space, thus obtaining the clipped objective (The advantages are the delta of rewards by taking a given action instead of another). \
+Then, we clip the ratio of probabilities within a range close to one (e.g. [0.8 to 1,2]), and we multiply it by the advantages of doing that action in that state space, thus obtaining the clipped objective (The advantages are the delta of rewards by taking a given action instead of the average action). \
 Clipping the ratio decreases the steps while updating the policy, and makes it more stable. \
 That clipped objective (clipped ratio * advantages) is then compared to the unclipped objective (ratio * advantages), and the smallest objective value is the one used. The reason behind that choice is to stay more conservative with the policy updates.
 
