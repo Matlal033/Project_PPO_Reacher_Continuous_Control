@@ -12,7 +12,7 @@ The environment is considered solved when the average score accross all 20 agent
 Other specifications for each agent: \
 State size: 33 (informations about position, rotation, velocity and angular velocities) \
 Action size: 4 \
-Each action range: [-1,1] (Torque value for each join) \
+Each action range: [-1,1] (Torque value for each join)
 
 ![](images/Reacher_g1.gif)
 
