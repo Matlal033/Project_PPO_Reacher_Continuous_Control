@@ -137,5 +137,5 @@ if __name__ == "__main__":
         if np.mean(scores_window)>30 \
         and ep+1 >= 100:
             print('\nEnvironment solved in {:d} episodes!\tAverage Score: {:.2f}'.format((ep+1)-100, np.mean(scores_window)))
-            torch.save(agent.ActorCritic.state_dict(), 'checkpoint_temp_actor_critic.pth')
+            torch.save(agent.ActorCritic.state_dict(), filename)
             break
