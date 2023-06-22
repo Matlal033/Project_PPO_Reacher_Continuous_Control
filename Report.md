@@ -52,6 +52,19 @@ Entropy is also included has a regulization term in the loss function, thereby i
 
 ### Plot of rewards
 
+In **121** episodes, the game was solved by achieving an average score of at least +30 over the next 100 episodes.
+
+```
+Episode  217  avg score:  34.563499227445575
+Episode  218  avg score:  33.79699924457818
+Episode  219  avg score:  34.288499233592304
+Episode  220  avg score:  34.00399923995137
+Episode  221  avg score:  34.84549922114238
+
+Environment solved in 121 episodes!     Average Score: 30.166
+```
+
+![](images/Reacher_g1.gif)
 
 ### Ideas for future work
 
