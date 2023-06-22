@@ -58,13 +58,13 @@ class collect_trajectories:
 
 class Agent:
     def __init__(self, action_size, state_size, device, episode=1000, discount_rate=.99,
-        gae_lambda=0.95, surrogate_clip=0.2, beta=0.1, tmax=1000, SGD_epoch=1,
+        tau=0.95, surrogate_clip=0.2, beta=0.1, tmax=1000, SGD_epoch=1,
         LR=3e-4, adam_epsilon=1e-5, batch_size=2000, hidden_size=512,num_agents=20, gradient_clip=5):
 
         self.discount_rate = discount_rate
         self.surrogate_clip = surrogate_clip
         self.qty_epoch = SGD_epoch
-        self.gae_lambda = gae_lambda
+        self.tau = tau
         self.trajectories = collect_trajectories(batch_size, num_agents)
 
         self.ActorCritic = ActorCritic(state_size, action_size, hidden_size, LR, adam_epsilon).to(device)
@@ -117,7 +117,7 @@ class Agent:
 
             r_returns = r_rewards + self.discount_rate * r_returns  * r_dones
             td_error = r_rewards + self.discount_rate * r_dones * r_next_value - r_value
-            r_advantages = r_advantages * self.gae_lambda * self.discount_rate * r_dones + td_error
+            r_advantages = r_advantages * self.tau * self.discount_rate * r_dones + td_error
 
             processed[r] = [\
                 r_states, \

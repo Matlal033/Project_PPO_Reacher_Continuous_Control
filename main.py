@@ -36,7 +36,7 @@ if __name__ == "__main__":
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     episode = 2000
     discount_rate = .99
-    gae_lambda = 0.95
+    tau = 0.95
     surrogate_clip = 0.2
     surrogate_clip_decay = 1
     beta = 1e-2 #entropy coefficient
@@ -69,7 +69,7 @@ if __name__ == "__main__":
     mean_rewards = []
 
     agent = Agent(action_size, state_size, device, episode=episode, discount_rate=discount_rate,
-            gae_lambda=gae_lambda, surrogate_clip=surrogate_clip, beta=beta, tmax=tmax, SGD_epoch=SGD_epoch,
+            tau=tau, surrogate_clip=surrogate_clip, beta=beta, tmax=tmax, SGD_epoch=SGD_epoch,
             LR=LR, adam_epsilon=adam_epsilon, batch_size=batch_size, hidden_size=hidden_size,
             num_agents=num_agents, gradient_clip=gradient_clip)
 
