@@ -5,7 +5,7 @@
 This is the second project of the Udacity Deep Reinforcement Learning nanodegree, dealing with continuous control.
 For this project, the Reacher environment was solved using the PPO algorithm with distributed training over 20 parallel agents.
 
-The essence of this problem is to solve the movement of a double jointed arm, so that its hand moves into a target location. For each timestep where the hand is in the target location, a reward of +0.1 is received. Else a reward of +0.0 is received.
+The essence of this problem is to solve the movement of a double jointed arm, so that its hand stays in a moving target location. For each timestep where the hand is in the target location, a reward of +0.1 is received. Else a reward of +0.0 is received.
 
 The environment is considered solved when the average score accross all 20 agents reaches 30 for 100 episodes in a row.
 
