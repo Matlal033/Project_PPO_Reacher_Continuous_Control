@@ -64,7 +64,7 @@ Episode  221  avg score:  34.84549922114238
 Environment solved in 121 episodes!     Average Score: 30.166
 ```
 
-![](images/Reacher_g1.gif)
+![](images/Reacher_plot1.gif)
 
 ### Ideas for future work
 
