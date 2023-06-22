@@ -2,7 +2,7 @@
 
 ### Learning Algorithm
 
-The PPO algorithm was used to solve this project.
+The **PPO algorithm** was used to solve this project.
 It is an on-policy algorithm, from the family of policy gradient methods, that is able to tackle complex environments, continuous action spaces and distributed training.
 
 One of the key element characterizing the PPO algorithm is the surrogate clipped objective. \
@@ -15,37 +15,41 @@ Since the goal is to maximize the expected returns, and that a loss function tri
 Entropy is also included has a regulization term in the loss function, thereby increasing the stochasticity of the policy, helping with exploration, and potentially helpinh with faster convergence to a good policy.
 
 ##### Hypermarameters :
-    episode = 2000
-    discount_rate = .99
-    gae_lambda = 0.95
-    surrogate_clip = 0.2
-    surrogate_clip_decay = 0.999
-    beta = 1e-2 #entropy coefficient
-    beta_decay = 0.995
-    tmax = 400000 #timesteps while collecting trajectories
-    SGD_epoch = 10 
-    LR = 3e-4
-    adam_epsilon = 1e-5
-    batch_size = 2000
-    hidden_size = 1024
-    gradient_clip = 5 
-    rollout_size = 2000
+|Hyperparameter|Value|
+|--------------|-----|
+|episode | 2000 |
+|discount_rate | .99 |
+|gae_lambda | 0.95 |
+|surrogate_clip | 0.2 |
+|surrogate_clip_decay | 1 |
+|beta | 1e-2 | #entropy coefficient
+|beta_decay | 1 |
+|tmax | 400000 | #timesteps while collecting trajectories
+|SGD_epoch | 4 |
+|LR | 1e-4 |
+|adam_epsilon | 3e-4 |
+|batch_size | 500 |
+|hidden_size | 128 |
+|gradient_clip | 5 |
+|rollout_size | 500 |
 
 ##### Actor neural network structure :
 
 | Layer | type | Input size | Output size | Activation |
 |-------|------|------------|-------------|------------|
 |1 | Fully Connected | 33 (state size) | 1024 | ReLU |
-|2  | Fully Connected | 1024 | 1024 | ReLU |
-|3  | Fully Connected | 1024 | 4 (action size) | tanh |
+|2  | Fully Connected | 128 | 128 | ReLU |
+|3 | Fully Connected | 128 | 128 | ReLU |
+|4  | Fully Connected | 128 | 4 (action size) | tanh |
 
 ##### Value neural network structure :
 
 | Layer | type | Input size | Output size | Activation |
 |-------|------|------------|-------------|------------|
 |1 | Fully Connected | 33 (state size) | 1024 | ReLU |
-|2  | Fully Connected | 1024 | 1024 | ReLU |
-|3  | Fully Connected | 1024 | 1 | None |
+|2  | Fully Connected | 128 | 128 | ReLU |
+|3  | Fully Connected | 128 | 128 | ReLU |
+|4 | Fully Connected | 1024 | 1 | None |
 
 ### Plot of rewards
 
