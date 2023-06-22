@@ -45,3 +45,9 @@ E.g.: `main.py "checkpoints\checkpoint_temp_actor_critdic.pth"`
 First, in the *watch_agent.py* file,  make sure the path to the UnityEnvironment points to *Reacher.exe*. \
 Then, from the command window, launch *watch_agent.py*  file with the filepath to the checkpoint as the first argument. \
 E.g.: `watch_agent.py "checkpoints\checkpoint_temp_actor_critdic.pth"`
+
+
+### References
+- Proximal Policy Optimization Algorithms (https://arxiv.org/pdf/1707.06347.pdf)
+- Understanding the impact of entropy on policy optimization (https://proceedings.mlr.press/v97/ahmed19a/ahmed19a.pdf)
+- Introducing the Clipped Surrogate Objective Function (https://huggingface.co/learn/deep-rl-course/unit8/clipped-surrogate-objective?fw=pt)
