@@ -32,16 +32,16 @@ You will also need to download the unity environnment compressed file from one o
 
 #### To train the agent from scratch
 
-In *main.py* file, make sure the path to the UnityEnvironment points to Reacher.exe.
-E.g.: `env = UnityEnvironment(file_name='Reacher_Windows_x86_64\Reacher.exe')`
+In *main.py* file, make sure the path to the UnityEnvironment points to *Reacher.exe*. \
+E.g.: `env = UnityEnvironment(file_name='Reacher_Windows_x86_64\Reacher.exe')` \
 Then, launch `main.py` from the command window.
 
 ### To train the agent from a previous checkpoint
-In the command window, pass as a first argument the filepath to the checkpoint.
+In the command window, pass as a first argument the filepath to the checkpoint. \
 E.g.: `main.py "checkpoints\checkpoint_temp_actor_critdic.pth"`
 
 #### To watch a trained agent
 
-First, in the *watch_agent.py* file,  make sure the path to the UnityEnvironment points to Reacher.exe.
-Then, from the command window, launch *watch_agent.py*  file the filepath to the checkpoint as the first argument.
+First, in the *watch_agent.py* file,  make sure the path to the UnityEnvironment points to *Reacher.exe*. \
+Then, from the command window, launch *watch_agent.py*  file with the filepath to the checkpoint as the first argument. \
 E.g.: `watch_agent.py "checkpoints\checkpoint_temp_actor_critdic.pth"`
