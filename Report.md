@@ -80,4 +80,5 @@ Environment solved in 121 episodes!     Average Score: 30.166
 
 ### Ideas for future work
 
-Since the learning was extremely sensible to the hyperparameters, and that multiple plateaus below 30 points were reached in previous experiments, it would be interesting to further investigate the impact of entropy at different stages of training, to better encourage exploration when agent is not learning anymore.
+Since the learning was extremely sensible to the hyperparameters, and that multiple plateaus below 30 points were reached in previous experiments, it would be interesting to further investigate the impact of entropy at different stages of training, to better encourage exploration when agent is not learning anymore. \
+Changing the structure of the neural net also had a major impact. Trying out larger and deeper hidden layers would be an interesting area to investigate further. 
