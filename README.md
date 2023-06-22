@@ -16,7 +16,7 @@ Each action range : [-1,1]
 Each state comprises informations about position, rotation, velocity and angular velocities.
 Each action is a Torque value.
 
-![](images/Reacher_G1.gif)
+![](images/Reacher_g1.gif)
 
 ### Getting started
 
