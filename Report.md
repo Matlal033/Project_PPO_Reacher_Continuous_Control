@@ -80,4 +80,4 @@ Environment solved in 121 episodes!     Average Score: 30.166
 
 ### Ideas for future work
 
-Since the learning was extremely sensible to the hyperparameters
+Since the learning was extremely sensible to the hyperparameters, and that multiple plateaus below 30 points were reached in previous experiments, it would be interesting to further investigate the impact of entropy at different stages of training, to better encourage exploration when agent is not learning anymore.
