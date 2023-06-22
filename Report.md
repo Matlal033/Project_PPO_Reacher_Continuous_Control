@@ -19,13 +19,13 @@ Entropy is also included has a regularization term in the loss function, thereby
 |--------------|-----|
 |episode | 2000 |
 |discount_rate | .99 |
-|gae_lambda | 0.95 |
+|tau | 0.95 |
 |surrogate_clip | 0.2 |
 |surrogate_clip_decay | 1 |
 |beta | 1e-2 |
 |beta_decay | 1 |
-|SGD_epoch | 4 |
-|LR | 1e-4 |
+|n_epoch | 4 |
+|learning_rate | 1e-4 |
 |adam_epsilon | 3e-4 |
 |batch_size | 500 |
 |hidden_size | 128 |
