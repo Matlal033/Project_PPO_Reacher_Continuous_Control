@@ -9,7 +9,7 @@ The essence of this problem is to solve the movement of a double jointed arm, so
 
 The main specifications for each agent are: \
 State size: 33 (informations about position, rotation, velocity and angular velocities) \
-Action size: 4 (Torque value for each join) \ 
+Action size: 4 (Torque value for each join) \
 Each action range: [-1,1] 
 
 The environment is considered solved when the average score accross all 20 agents reaches 30 for 100 episodes in a row.
