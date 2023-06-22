@@ -5,16 +5,16 @@
 The **PPO algorithm** was used to solve this project.
 It is an on-policy algorithm, from the family of policy gradient methods, that is able to tackle complex environments, continuous action spaces and distributed training.
 
-One of the key element characterizing the PPO algorithm is the surrogate clipped objective. \
+One of the key elements characterizing the PPO algorithm is the surrogate clipped objective. \
 To train the neural net, we compare the probabilities of taking a given action according to a previous policy, versus the probabilities of taking that same action with the actual policy by dividing them together. \
 Then, we clip the ratio of probabilities within a range close to one (e.g. [0.8 to 1,2]), and we multiply it by the advantages of doing that action in that state space, thus obtaining the clipped objective (The advantages are the delta of rewards by taking a given action instead of the average action). \
-Clipping the ratio decreases the steps while updating the policy, and makes it more stable. \
+Clipping the ratio decreases the steps while updating the policy and makes it more stable. \
 That clipped objective (clipped ratio * advantages) is then compared to the unclipped objective (ratio * advantages), and the smallest objective value is the one used. The reason behind that choice is to stay more conservative with the policy updates.
 
 Since the goal is to maximize the expected returns, and that a loss function tries to minimize a value, we use the negative value of the objective during training.
-Entropy is also included has a regulization term in the loss function, thereby increasing the stochasticity of the policy, helping with exploration, and potentially helping with faster convergence to a good policy.
+Entropy is also included has a regularization term in the loss function, thereby increasing the stochasticity of the policy, helping with exploration, and potentially helping with faster convergence to a good policy.
 
-##### Hypermarameters :
+#### Hypermarameters :
 |Hyperparameter|Value|
 |--------------|-----|
 |episode | 2000 |
@@ -32,11 +32,18 @@ Entropy is also included has a regulization term in the loss function, thereby i
 |gradient_clip | 5 |
 |rollout_size | 500 |
 
+#### Neural networks
+
+Without sharing weights, both the actor and critic neural networks have the same structure for the 3 first layers, with state size as input, and 128 as all hidden sizes. \
+The actor outputs 4 values for the actions as probability distributions with a learnable standard deviation. \
+the critic outputs a single number that estimates the value of a given state. \
+An adam optimizer is used to train the neural networks.
+
 ##### Actor neural network structure :
 
 | Layer | type | Input size | Output size | Activation |
 |-------|------|------------|-------------|------------|
-|1 | Fully Connected | 33 (state size) | 1024 | ReLU |
+|1 | Fully Connected | 33 (state size) | 128 | ReLU |
 |2  | Fully Connected | 128 | 128 | ReLU |
 |3 | Fully Connected | 128 | 128 | ReLU |
 |4  | Fully Connected | 128 | 4 (action size) | tanh |
@@ -45,10 +52,13 @@ Entropy is also included has a regulization term in the loss function, thereby i
 
 | Layer | type | Input size | Output size | Activation |
 |-------|------|------------|-------------|------------|
-|1 | Fully Connected | 33 (state size) | 1024 | ReLU |
+|1 | Fully Connected | 33 (state size) | 128 | ReLU |
 |2  | Fully Connected | 128 | 128 | ReLU |
 |3  | Fully Connected | 128 | 128 | ReLU |
 |4 | Fully Connected | 1024 | 1 | None |
+
+##### Other parameters
+`self.std = nn.Parameter(torch.ones(1, action_size))`
 
 ### Plot of rewards
 
@@ -70,3 +80,4 @@ Environment solved in 121 episodes!     Average Score: 30.166
 
 ### Ideas for future work
 
+Since the learning was extremely sensible to the hyperparameters
