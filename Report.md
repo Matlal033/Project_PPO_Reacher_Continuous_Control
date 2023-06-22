@@ -12,7 +12,7 @@ Clipping the ratio decreases the steps while updating the policy, and makes it m
 That clipped objective (clipped ratio * advantages) is then compared to the unclipped objective (ratio * advantages), and the smallest objective value is the one used. The reason behind that choice is to stay more conservative with the policy updates.
 
 Since the goal is to maximize the expected returns, and that a loss function tries to minimize a value, we use the negative value of the objective during training.
-Entropy is also included has a regulization term in the loss function, thereby increasing the stochasticity of the policy, helping with exploration, and potentially helpinh with faster convergence to a good policy.
+Entropy is also included has a regulization term in the loss function, thereby increasing the stochasticity of the policy, helping with exploration, and potentially helping with faster convergence to a good policy.
 
 ##### Hypermarameters :
 |Hyperparameter|Value|
