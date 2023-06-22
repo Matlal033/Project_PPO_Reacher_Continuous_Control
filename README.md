@@ -18,7 +18,7 @@ The environment is considered solved when the average score accross all 20 agent
 
 ### Getting started
 
-To run this code, Python 3.6 is required, along with the dependencies found in [requirements.txt](requirements.txt).
+To run this code, Python 3.6 is required, along with the dependencies found in [requirements.txt](requirements.txt). \
 Creating a virtual environment with those specifications is recommended.
 
 You will also need to download the unity environnment compressed file from one of the following links, and extract it under the `Project_PPO_Reacher_Continuous_Control/` folder :
@@ -32,10 +32,16 @@ You will also need to download the unity environnment compressed file from one o
 
 #### To train the agent from scratch
 
-Launch *PPO_agent.py* from the command window.
+In *main.py* file, make sure the path to the UnityEnvironment points to Reacher.exe.
+E.g.: env = UnityEnvironment(file_name='Reacher_Windows_x86_64\Reacher.exe')
+Then, launch *main.py* from the command window.
+
+### To train the agent from a previous checkpoint
+In the command window, pass as a first argument the filepath to the checkpoint.
+E.g.: main.py "checkpoints\checkpoint_temp_actor_critdic.pth"
 
 #### To watch a trained agent
 
-First, in the *PPO_agent.py* file, make sure that the path to the UnityEnvironment is correctly mapped to *Reacher.exe*
-To watch a train agent, we launch the same main script *PPO_agent.py" and we add a system argument to the filepath to the saved weights.
-E.g.: Launch *PPO_agent.py [filepath to trained weights]* from the command window.
+First, in the *watch_agent.py* file,  make sure the path to the UnityEnvironment points to Reacher.exe.
+Then, from the command window, launch *watch_agent.py*  file the filepath to the checkpoint as the first argument.
+E.g.: watch_agent.py "checkpoints\checkpoint_temp_actor_critdic.pth"
