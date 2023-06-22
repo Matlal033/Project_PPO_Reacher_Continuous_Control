@@ -7,12 +7,12 @@ For this project, the Reacher environment was solved using the PPO algorithm wit
 
 The essence of this problem is to solve the movement of a double jointed arm, so that its hand stays in a moving target location. For each timestep where the hand is in the target location, a reward of +0.1 is received. Else a reward of +0.0 is received.
 
-The environment is considered solved when the average score accross all 20 agents reaches 30 for 100 episodes in a row.
-
-Other specifications for each agent: \
+The main specifications for each agent are: \
 State size: 33 (informations about position, rotation, velocity and angular velocities) \
 Action size: 4 \
 Each action range: [-1,1] (Torque value for each join)
+
+The environment is considered solved when the average score accross all 20 agents reaches 30 for 100 episodes in a row.
 
 ![](images/Reacher_g1.gif)
 
