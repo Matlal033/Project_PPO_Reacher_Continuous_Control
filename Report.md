@@ -22,9 +22,9 @@ Entropy is also included has a regulization term in the loss function, thereby i
 |gae_lambda | 0.95 |
 |surrogate_clip | 0.2 |
 |surrogate_clip_decay | 1 |
-|beta | 1e-2 | #entropy coefficient
+|beta | 1e-2 |
 |beta_decay | 1 |
-|tmax | 400000 | #timesteps while collecting trajectories
+|tmax | 400000 |
 |SGD_epoch | 4 |
 |LR | 1e-4 |
 |adam_epsilon | 3e-4 |
